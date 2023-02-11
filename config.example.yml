@@ -1,0 +1,12 @@
+zoho:
+  clientId: 1000.YOURCLIENTID
+  clientSecret: YOURCLIENTSECRET
+
+fromEmail: jdoe@example.org
+
+toEmails:
+  - test@one.example
+  - test@two.example
+  - test@three.example
+
+iftttUrl: https://maker.ifttt.com/trigger/notify/with/key/...
