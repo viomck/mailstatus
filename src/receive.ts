@@ -14,13 +14,13 @@ export default async function receive(env: Env, testId: string) {
     const json: { data: { subject: string }[] } = await resp.json();
     const subjects = json.data.map(x => x.subject.trim());
 
-    await env.KV.delete("testId");
-
     for (const email of env.TO_EMAILS.split(",")) {
         if (!subjects.includes(prefix + email)) {
             throw new Error("No email found for " + email);
         }
     }
+
+    await env.KV.delete("testId");
 
     console.log("=== MAIL CHECK GOOD! :D ===");
 }
