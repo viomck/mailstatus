@@ -19,7 +19,10 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	) {
-		if (env.ENVIRONMENT !== "dev") {
+		if (
+			env.ENVIRONMENT !== "dev" && 
+			request.headers.get("Authorization") != env.CLIENT_SECRET
+		) {
 			return new Response("No HTTP API available.");
 		}
 
