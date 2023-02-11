@@ -9,9 +9,6 @@ kv_namespaces = [
 [triggers]
 crons = [ "0/5 * * * *" ]
 
-[vars]
-ZOHO_USER_ID = "802926493"
-
 [env.test]
 name = "mailstatus-test"
 kv_namespaces = [

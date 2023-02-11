@@ -5,7 +5,6 @@ import send from "./send";
 
 export interface Env {
 	KV: KVNamespace
-	ZOHO_USER_ID: string
 	IFTTT_URL: string
 	FROM_EMAIL: string
 	TO_EMAILS: string
