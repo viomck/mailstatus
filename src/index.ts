@@ -44,7 +44,18 @@ export default {
 	): Promise<void> {
 		try {
 			await run(env);
-		} catch {
+		} catch (e: any) {
+			if (("" + e).includes("No email found")) {
+				if (await env.KV.get("failedOnce")) {
+					await notify(env, "Mail check run failed: " + e);
+					await env.KV.delete("failedOnce");
+				} else {
+					console.log("Mail check run failed: " + e);
+					await env.KV.put("failedOnce", "");
+				}
+				return;
+			}
+
 			await refresh(env);
 
 			try {
