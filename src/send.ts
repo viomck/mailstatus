@@ -21,7 +21,7 @@ export default async function send(env: Env) {
         );
 
         console.log(await resp.text());
-
-        await env.KV.put("testId", testId + "");
     }
+
+    await env.KV.put("testId", testId + "");
 }
