@@ -1,5 +1,6 @@
 [webhook integration]: (https://ifttt.com/maker_webhooks)
 [cfids]: (https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/)
+[cf-make-kv]: (https://github.com/viomck/bin/blob/main/cf-make-kv.mjs)
 
 # mailstatus
 
@@ -29,7 +30,7 @@ the forwarding every 10 minutes.
 
 1. clone the repo and cd into it
 1. install all dependencies with `npm i`
-1. create a kv with `wrangler kv:namespace create KV`
+1. create a kv with `wrangler kv:namespace create KV` (or [cf-make-kv])
 1. copy the binding configuration and replace the existing one in wrangler.toml
 1. change the account_id in wrangler.toml to [yours][cfids]
 1. copy config.example.yml to config.yml and edit the variables
