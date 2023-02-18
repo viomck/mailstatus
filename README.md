@@ -23,9 +23,11 @@ the forwarding every 10 minutes.
 - npm packages wrangler and zx (`npm i -g wrangler zx`)
 - a unix environment (CLI **may** work on windows, but is not supported)
 - a [zoho oauth2 client](https://api-console.zoho.com/)
+- a decently recent version of npm/node
 
 ## setup
 
+1. clone the repo and cd into it
 1. install all dependencies with `npm i`
 1. create a kv with `wrangler kv:namespace create KV`
 1. copy the binding configuration and replace the existing one in wrangler.toml
