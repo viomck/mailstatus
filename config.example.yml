@@ -1,12 +1,17 @@
+# details of the zoho oauth2 application
 zoho:
   clientId: 1000.YOURCLIENTID
   clientSecret: YOURCLIENTSECRET
 
+# the email to send messages from, this must be the email of the account
+# specified above
 fromEmail: jdoe@example.org
 
+# emails to send to, to test forwarding
 toEmails:
   - test@one.example
   - test@two.example
   - test@three.example
 
+# your webhook trigger URL, found in the documentation of the webhook maker
 iftttUrl: https://maker.ifttt.com/trigger/notify/with/key/...
