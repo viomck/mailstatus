@@ -1,25 +1,24 @@
 import { Env } from ".";
 
-export default async function notify(env: Env, message: string) {
-    console.log(message);
+type WuphfFetch = (
+    url: string, 
+    req: RequestInit<{ skipAuth: boolean }>,
+) => Promise<Response>;
 
-    const resp = await fetch(
-        env.IFTTT_URL,
+export default async function notify(env: Env, message: string) {
+    const resp = await (env.WUPHF.fetch as WuphfFetch)(
+        "https://dummy",
         {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
+            cf: {
+                skipAuth: true,
             },
-            // this api is hilarious
             body: JSON.stringify({
-                value1: message,
-            })
+                subject: "mailstatus failure",
+                from: "mailstatus",
+                message
+            }),
+            method: "POST"
         }
     );
-
     console.log(await resp.text());
-
-    if (!resp.ok) {
-        console.error("FAILED TO SEND TO IFTTT: " + await resp.text());
-    }
 }

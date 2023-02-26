@@ -1,4 +1,3 @@
-[webhook integration]: (https://ifttt.com/maker_webhooks)
 [cfids]: (https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/)
 [cf-make-kv]: (https://github.com/viomck/bin/blob/main/cf-make-kv.mjs)
 
@@ -19,7 +18,7 @@ the forwarding every 10 minutes.
 
 - a zoho test user account
 - an email route on all applicable domains to that account
-- an IFTTT applet with a [Webhook Integration]
+- a [wuphf](https://github.com/viomck/wuphf) deployment
 - the URL to the webhook
 - npm packages wrangler and zx (`npm i -g wrangler zx`)
 - a unix environment (CLI **may** work on windows, but is not supported)

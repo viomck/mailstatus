@@ -13,7 +13,10 @@ const args = [
     "--var", "TO_EMAILS:" + config.toEmails.join(","),
     "--var", "CLIENT_ID:" + config.zoho.clientId,
     "--var", "CLIENT_SECRET:" + config.zoho.clientSecret,
-    "--var", "IFTTT_URL:" + config.iftttUrl
 ];
+
+if (command === "dev") {
+    args.push("--var", "ENVIRONMENT:dev");
+}
 
 await $`wrangler ${command} ${args} ${argv._.splice(2)}`

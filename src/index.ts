@@ -10,7 +10,8 @@ export interface Env {
 	TO_EMAILS: string
 	CLIENT_ID: string
 	CLIENT_SECRET: string
-	ENVIRONMENT?: string
+	ENVIRONMENT?: string,
+	WUPHF: Fetcher,
 }
 
 export default {

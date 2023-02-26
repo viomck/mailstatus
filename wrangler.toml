@@ -5,6 +5,9 @@ account_id = "fc50728782db5601b969d9a65dc24fd6"
 kv_namespaces = [
   { binding = "KV", id = "f674a320937d423589b0c00d4c8a109b", preview_id = "5125f329d61249d79a05e57e08c7dc6e" }
 ]
+services = [
+  { binding = "WUPHF", service = "wuphf" }
+]
 
 [triggers]
 crons = [ "0/5 * * * *" ]

@@ -12,6 +12,3 @@ toEmails:
   - test@one.example
   - test@two.example
   - test@three.example
-
-# your webhook trigger URL, found in the documentation of the webhook maker
-iftttUrl: https://maker.ifttt.com/trigger/notify/with/key/...
